@@ -182,3 +182,9 @@ both(new Date());
 ```
 
 compose 함수의 구현체는 아래와 같다.
+
+```jsx
+const compose = (...fns) => (initialValue) => (
+	fns.reduce((prevResult, fn)=> fn(prevResult),initialValue);
+)
+```
