@@ -32,3 +32,10 @@ const App = () => {
 - react에서 전역 데이터 관리 보다는 props drilling의 해결책으로 context를 제시함
 - context의 주된 용도는 다양한 레벨에 네스팅된 *많은* 컴포넌트에게 데이터를 전달하는 것 
 - context를 사용하면 컴포넌트를 재사용하기가 어려워지므로 꼭 필요할 때만 써야함
+
+```jsx
+const ColorContext = createContext();
+const useColors = () => useContext(ColorContext);
+```
+
+위와 같은 식으로 작성하면 context를 hook 내부에 숨길 수 있음
