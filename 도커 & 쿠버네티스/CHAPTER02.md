@@ -135,6 +135,33 @@ CMD ["node", "server.js"]
 ```
 
 - 빌드 명령어는 Dockerfile에 기록된대로 컨테이너를 실행한 뒤 완성된 이미지를 만듬
+
 - Dockerfile에서 명령어 한 줄이 실행될 때마다 이전 Step에서 생성된 이미지에 의해 새로운 컨테이너가 생성되며, 해당 라인을 수행하고 다시 새로운 이미지 레이어로 저장됨
-- 따라서 이미지 빌드가 완료되면 Dockerfile의 명령어 줄 수 만큼의 레이어가 존재하게 됨
-  -> 변경되지 않은 라인은 cache로 활용
+
+- 따라서 이미지 빌드가 완료되면 Dockerfile의 명령어 줄 수 만큼의 레이어가 존재하게 됨. 변경되지 않은 라인은 cache로 활용
+
+### 2.4.3 멀티 스테이지 빌드
+
+```
+FROM golang
+ADD main.go /root
+WORKDIR /root
+RUN go build -o /rrot/mainApp /roo/main.go
+
+FROM alpine:latest
+WORKDIR /root
+COPY --from=0 /root/mainApp.
+CMD ["./mainApp]
+```
+
+- 위와 같이 이미지를 두 개 이상 사용하는 빌드를 멀티 스테이지 빌드라고 함
+- from line에서 mainApp에 있는 파일만 복사해서 alpine에 복사 함으로써 불필요한 의존성 제거, 도커 이미지 크기 줄일 수 있음
+
+### 2.4.4 기타 docker 명령어
+
+```
+ENV: Dockerfile에서 사용될 환경변수 지정
+VOLUME: 빌드된 이미지로 컨테이너를 생성했을 때 호스트와 공융할 컨테이너 내부의 디렉터리를 설정
+ARG: build 명령어를 실행할 때 추가로 입력을 받아 Dockerfile내에서 사용될 변수의 값을 설정
+USER: USER로 컨테이너 내에서 사용될 사용자 계정의 이름이나 UID를 설정하면 그 아래의 명령어는 해당 사용자 권한으로 실행.
+```
