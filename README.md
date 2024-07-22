@@ -1,7 +1,5 @@
 # 📚 독서 기록
 
-기간 : 2022.08 ~ 현재 🏃‍♂️
-
 ### 🖋 Record
 
 - [Done] [Learning-React](https://www.hanbit.co.kr/store/books/look.php?p_code=B7468885216)
