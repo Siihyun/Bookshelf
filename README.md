@@ -11,3 +11,4 @@
 - [DONE] [소프트웨어 장인](https://www.yes24.com/Product/Goods/20461940)
 - [DONE] [도커 & 쿠버네티스](https://www.yes24.com/Product/Goods/93765519)
 - [In Progress] [클린 코드](https://www.yes24.com/Product/Goods/11681152)
+- [DONE] [업무에 활용하는 Node.js](https://www.yes24.com/Product/Goods/126715624)
