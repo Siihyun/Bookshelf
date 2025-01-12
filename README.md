@@ -13,3 +13,5 @@
 - [DONE] [업무에 활용하는 Node.js](https://www.yes24.com/Product/Goods/126715624)
 - [DONE] [따라하며 배우는 도커와 CI 환경](https://m.yes24.com/Goods/Detail/105030656)
 - [DONE] [애플에서는 단순하게 일합니다](https://www.yes24.com/Product/Goods/126820403)
+- [IN PROGRESS] [24단계 실습으로 정복하는 쿠버네티스](https://www.yes24.com/Product/Goods/115187666)
+- [IN PROGRESS] [프론트엔드 개발을 위한 테스트 입문](https://www.yes24.com/product/goods/127005970)
